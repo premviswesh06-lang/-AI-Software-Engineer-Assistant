@@ -1,0 +1,94 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>AI Software Engineer Assistant</title>
+<style>
+:root{--bg:#0B0F0C;--card:#1E2320;--ac:#00FF66;--tx:#fff;--mu:#9CA3AF;--fs:16px;--ff:Inter,'Space Grotesk',system-ui,sans-serif;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--tx);font:var(--fs)/1.6 var(--ff);min-height:100vh;background-image:radial-gradient(600px 300px at 80% -5%,color-mix(in srgb,var(--ac) 18%,transparent),transparent)}
+a{color:inherit;text-decoration:none;cursor:pointer}
+.pg{display:none;min-height:100vh}.pg.on{display:block}
+.glass{background:rgba(30,35,32,.6);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid color-mix(in srgb,var(--ac) 28%,transparent);border-radius:16px}
+.btn{background:var(--ac);color:#04110a;border:0;padding:11px 22px;border-radius:10px;font:600 .95em var(--ff);cursor:pointer;box-shadow:0 0 22px color-mix(in srgb,var(--ac) 45%,transparent);transition:.2s}
+.btn:hover{transform:translateY(-2px)}.ghost{background:transparent;color:var(--ac);border:1px solid var(--ac);box-shadow:none}
+nav{display:flex;align-items:center;justify-content:space-between;padding:16px 5%;position:sticky;top:0;z-index:5;backdrop-filter:blur(12px);border-bottom:1px solid #ffffff10}
+.logo{font-weight:700;font-size:1.2em}.logo b{color:var(--ac)}nav .l{display:flex;gap:26px;color:var(--mu);font-size:.92em}
+.hero{text-align:center;padding:70px 5% 30px;max-width:900px;margin:auto}
+h1{font-size:clamp(2rem,5.5vw,3.6rem);line-height:1.1;margin:0 0 16px}h1 span{color:var(--ac);text-shadow:0 0 30px color-mix(in srgb,var(--ac) 60%,transparent)}
+.mu{color:var(--mu)}.row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:24px}
+.mock{max-width:760px;margin:40px auto;padding:18px;animation:fl 5s ease-in-out infinite;box-shadow:0 0 80px color-mix(in srgb,var(--ac) 22%,transparent)}
+@keyframes fl{50%{transform:translateY(-10px)}}
+.bars{display:flex;gap:8px;align-items:flex-end;height:90px;margin-top:12px}.bars i{flex:1;background:linear-gradient(var(--ac),transparent);border-radius:6px 6px 0 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;padding:20px 5% 50px;max-width:1100px;margin:auto}
+.card{background:var(--card);border:1px solid #ffffff10;border-radius:14px;padding:20px;transition:.25s;cursor:pointer}
+.card:hover{border-color:var(--ac);box-shadow:0 0 24px color-mix(in srgb,var(--ac) 25%,transparent);transform:translateY(-3px)}
+.ic{font-size:1.5em;color:var(--ac);margin-bottom:6px}.card h3{margin:.2em 0}.card p{margin:0;color:var(--mu);font-size:.9em}
+#splash{display:none;place-items:center;text-align:center}#splash.on{display:grid}
+.wm{font-size:3rem;font-weight:700;letter-spacing:2px;color:var(--ac);text-shadow:0 0 30px var(--ac)}
+.ld{width:220px;height:4px;background:#ffffff15;border-radius:4px;margin:20px auto;overflow:hidden}.ld i{display:block;height:100%;width:0;background:var(--ac);animation:ld 2.6s forwards}@keyframes ld{to{width:100%}}
+.ctr{display:grid;place-items:center;min-height:100vh;padding:20px}.box{width:100%;max-width:400px;padding:28px}
+input,select,textarea{width:100%;background:#0B0F0C;color:var(--tx);border:1px solid #ffffff20;border-radius:10px;padding:11px;margin:6px 0 12px;font:inherit}
+input:focus,textarea:focus,select:focus{outline:0;border-color:var(--ac)}textarea{min-height:150px;font-family:ui-monospace,Menlo,monospace;font-size:.9em}
+.main{max-width:1000px;margin:auto;padding:24px 5%}.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;gap:10px}
+pre{background:#050806;border:1px solid #ffffff12;border-radius:12px;padding:14px;overflow-x:auto;white-space:pre-wrap;min-height:60px}
+table{width:100%;border-collapse:collapse}td,th{padding:10px;border-bottom:1px solid #ffffff12;text-align:left;font-size:.9em}th{color:var(--mu)}
+.tag{background:color-mix(in srgb,var(--ac) 18%,transparent);color:var(--ac);padding:2px 9px;border-radius:20px;font-size:.78em}
+.st{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin:16px 0}.st .card{cursor:default}.st b{font-size:1.9em;color:var(--ac)}
+.sw{display:flex;gap:10px;flex-wrap:wrap}.sw button{width:38px;height:38px;border-radius:50%;border:2px solid #fff3;cursor:pointer}
+.out{min-height:60px}.tx{margin:10px 0;line-height:1.7}code{background:#ffffff14;padding:1px 6px;border-radius:5px;font-family:ui-monospace,Menlo,monospace;font-size:.92em}
+.cb{background:#050806;border:1px solid color-mix(in srgb,var(--ac) 30%,transparent);border-radius:12px;margin:10px 0;overflow:hidden}
+.ch{display:flex;justify-content:space-between;align-items:center;padding:6px 12px;background:var(--card);color:var(--mu);font-size:.8em}.ch .btn{padding:3px 14px;font-size:.9em;box-shadow:none}
+.cb pre{border:0;margin:0;border-radius:0;white-space:pre}
+.cur-a *{cursor:crosshair!important}
+@media(max-width:600px){nav .l{display:none}}
+</style></head><body>
+<section class="pg on" id="splash"><div><div class="wm" style="font-size:2.2rem">&lt;/&gt; AI Software Engineer Assistant</div><div class="mu">Debug · Generate · Explain</div><div class="ld"><i></i></div><div class="mu">loading...</div></div></section>
+
+<section class="pg" id="landing"><nav><div class="logo"><b>&lt;/&gt;</b> AI Software Engineer Assistant</div><div class="l"><a>Features</a><a>How it works</a><a>Docs</a></div><button class="btn" onclick="go('auth')">Get Started</button></nav>
+<div class="hero"><span class="tag">Built for beginners &amp; vibe coders</span><h1 style="margin-top:16px">Decode errors. Ship code. <span>Learn faster.</span></h1><p class="mu">One AI assistant that explains cryptic errors, generates starter code, and walks through any snippet line by line, and remembers every answer.</p><div class="row"><button class="btn" onclick="go('auth')">Start for free</button><button class="btn ghost" onclick="go('auth')">Try the demo</button></div></div>
+<div class="glass mock"><div class="mu" style="font-size:.85em">● ● ● &nbsp; Dashboard</div><div class="st"><div class="card"><span class="mu">Queries</span><br><b>248</b></div><div class="card"><span class="mu">Bugs fixed</span><br><b>91</b></div><div class="card"><span class="mu">Languages</span><br><b>7</b></div></div><div class="bars"><i style="height:40%"></i><i style="height:65%"></i><i style="height:50%"></i><i style="height:90%"></i><i style="height:72%"></i><i style="height:100%"></i><i style="height:60%"></i></div></div>
+<div class="grid" id="feat"></div></section>
+
+<section class="pg" id="auth"><div class="ctr"><div class="glass box"><div class="logo" style="text-align:center;margin-bottom:12px"><b>&lt;/&gt;</b> AI Software Engineer Assistant</div><div class="row" style="margin:0 0 14px"><button class="btn" id="tl" onclick="tab(1)">Login</button><button class="btn ghost" id="ts" onclick="tab(0)">Sign up</button></div>
+<div id="un"><label class="mu">User name</label><input id="u" placeholder="coder123"></div><label class="mu">Email</label><input id="e" type="email" placeholder="you@email.com"><label class="mu">Password</label><input id="p" type="password" placeholder="••••••••"><button class="btn" style="width:100%" onclick="login()">Continue</button></div></div></section>
+
+<section class="pg" id="home"><nav><div class="logo"><b>&lt;/&gt;</b> AI Software Engineer Assistant</div><a onclick="go('profile')" class="tag" id="who">Profile</a></nav><div class="main"><h2>What do you want to do?</h2><label class="mu">Programming language</label><select id="lang"></select><div class="grid" id="opts" style="padding:10px 0"></div></div></section>
+
+<section class="pg" id="tool"><nav><a onclick="go('home')">← Home</a><a onclick="go('profile')" class="tag">Profile</a></nav><div class="main"><h2 id="tt"></h2><p class="mu" id="td"></p><textarea id="inp"></textarea><button class="btn" onclick="run()">Run</button><h3>Response</h3><div id="out" class="out">Your answer will appear here.</div></div></section>
+
+<section class="pg" id="history"><nav><a onclick="go('home')">← Home</a><a onclick="go('profile')" class="tag">Profile</a></nav><div class="main"><h2>Query History</h2><div class="card" style="overflow-x:auto;cursor:default"><table><thead><tr><th>Time</th><th>Type</th><th>Language</th><th>Query</th></tr></thead><tbody id="hb"></tbody></table></div></div></section>
+
+<section class="pg" id="dash"><nav><a onclick="go('home')">← Home</a><a onclick="go('profile')" class="tag">Profile</a></nav><div class="main"><h2>Dashboard</h2><div class="st" id="ds"></div><div class="card" style="cursor:default"><h3>Queries by type</h3><div id="dbars"></div></div></div></section>
+
+<section class="pg" id="profile"><nav><a onclick="go('home')">← Home</a><button class="btn ghost" onclick="go('landing')">Sign out</button></nav><div class="main"><h2>Profile &amp; Settings</h2><div class="card" style="cursor:default"><h3 id="pn"></h3><p class="mu" id="pe"></p><button class="btn ghost" onclick="go('history')">View history</button></div>
+<div class="card" style="cursor:default;margin-top:16px"><h3>Theme</h3><div class="sw" id="sw"></div><h3>Accent colour</h3><input type="color" id="cc" value="#00ff66" oninput="S('--ac',this.value)"><h3>Font size</h3><input type="range" min="13" max="22" value="16" oninput="S('--fs',this.value+'px')"><h3>Font style</h3><select onchange="S('--ff',this.value)"><option value="Inter,system-ui,sans-serif">Inter</option><option value="'Space Grotesk',system-ui,sans-serif">Space Grotesk</option><option value="ui-monospace,Menlo,monospace">Monospace</option><option value="Georgia,serif">Serif</option></select><h3>Cursor</h3><select onchange="document.body.className=this.value"><option value="">Default</option><option value="cur-a">Crosshair</option></select></div></div></section>
+
+<script>
+const $=id=>document.getElementById(id);
+const LANGS="Python,Java,C#,Go,Ruby,Kotlin,Swift,Dart,JavaScript,TypeScript,PHP,HTML/CSS,C,C++,Rust,Assembly,Zig,D,R,MATLAB,Julia,SAS,SQL,PL/SQL,GraphQL".split(",");
+const T={ask:["Ask AI","Ask any programming question.","How do I reverse a list?"],debug:["Debug Code","Paste your code and the error.","print('hi'\n"],gen:["Generate Code","Describe what you need.","A function that checks if a number is prime"],explain:["Explain Code","Get a line-by-line explanation.","for i in range(3):\n    print(i)"]};
+const OPT=[["ask","💬","Ask AI","Instant answers to programming questions"],["debug","🐞","Debug Code","Error explanation + fix"],["gen","⚡","Generate Code","Describe it, get working code"],["explain","📖","Explain Code","Line-by-line breakdown"],["history","🕘","Query History","Browse past answers"],["dash","📊","Dashboard","Usage statistics"]];
+const THEMES={"Green":"#00ff66","Red":"#ff3b4e","Blue":"#3b9dff","Pink":"#ff4fa3","Purple":"#a855f7","Orange":"#ff9f1a"};
+let H=[],cur="ask",user={name:"Guest",email:""};
+$("lang").innerHTML=LANGS.map(l=>`<option>${l}</option>`).join("");
+$("feat").innerHTML=OPT.map(o=>`<div class="card"><div class="ic">${o[1]}</div><h3>${o[2]}</h3><p>${o[3]}</p></div>`).join("");
+$("opts").innerHTML=OPT.map(o=>`<div class="card" onclick="open_('${o[0]}')"><div class="ic">${o[1]}</div><h3>${o[2]}</h3><p>${o[3]}</p></div>`).join("");
+$("sw").innerHTML=Object.entries(THEMES).map(([n,c])=>`<button title="${n} &amp; Black" style="background:${c}" onclick="S('--ac','${c}')"></button>`).join("");
+function S(k,v){document.documentElement.style.setProperty(k,v)}
+function go(id){document.querySelectorAll('.pg').forEach(p=>p.classList.remove('on'));$(id).classList.add('on');scrollTo(0,0);if(id=='history')hist();if(id=='dash')dash();if(id=='profile'){$("pn").textContent=user.name;$("pe").textContent=user.email||"demo@codemate.ai"}}
+function tab(l){$("un").style.display=l?"none":"block";$("tl").className=l?"btn":"btn ghost";$("ts").className=l?"btn ghost":"btn"}tab(1);
+function login(){user={name:$("u").value||$("e").value.split("@")[0]||"Guest",email:$("e").value};$("who").textContent="👤 "+user.name;go('home')}
+function open_(k){if(k=='history'||k=='dash')return go(k);cur=k;$("tt").textContent=T[k][0];$("td").textContent=T[k][1];$("inp").value=T[k][2];$("out").textContent="Your answer will appear here.";go('tool')}
+function esc(s){return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")}
+function fmt(t){return esc(t).replace(/\*\*(.+?)\*\*/g,"<b>$1</b>").replace(/`([^`\n]+)`/g,"<code>$1</code>").replace(/^#{1,4}\s*(.+)$/gm,"<b>$1</b>").replace(/\n/g,"<br>")}
+function render(r){let h="";r.split("```").forEach((p,i)=>{if(i%2){const n=p.indexOf("\n"),lg=n>-1?p.slice(0,n).trim():"",c=n>-1?p.slice(n+1):p;h+='<div class="cb"><div class="ch"><span>'+esc(lg||"code")+'</span><button class="btn ghost" onclick="cp(this)">Copy</button></div><pre>'+esc(c.replace(/\n$/,""))+'</pre></div>'}else if(p.trim())h+='<div class="tx">'+fmt(p.trim())+'</div>'});$("out").innerHTML=h||"No answer."}
+function cp(b){navigator.clipboard.writeText(b.parentNode.nextElementSibling.textContent).then(()=>{b.textContent="Copied!";setTimeout(()=>b.textContent="Copy",1500)}).catch(()=>{b.textContent="Press Ctrl+C"})}
+const DEMO={ask:"Short answer: use reversed(items) or items.reverse().",debug:"Likely problem: a missing closing parenthesis.\nFix:\nprint('hi')",gen:"def is_prime(n):\n    if n < 2: return False\n    for i in range(2, int(n**0.5)+1):\n        if n % i == 0: return False\n    return True",explain:"Line 1: loops i over 0,1,2.\nLine 2: prints i."};
+async function run(){const q=$("inp").value,l=$("lang").value;$("out").textContent="Thinking...";let r;
+try{const x=await fetch("/api/"+cur,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({query:q,language:l})});
+let d={};try{d=await x.json()}catch(e){}
+if(x.ok)r=d.response;else if(x.status==404||x.status==405)r="Wrong address. Close this tab, keep 'python app.py' running, and open http://127.0.0.1:5000 (not Live Server or a file).";else r="Server error ("+x.status+"): "+(d.error||"Backend problem. Read the red error in the VS Code terminal.")}
+catch(e){r="[Demo mode: the backend is not reachable. Run 'python app.py' and open http://127.0.0.1:5000]\n\n"+DEMO[cur]}
+render(r);H.unshift({t:new Date().toLocaleTimeString(),type:cur,l,q:q.slice(0,60)})}
+function hist(){$("hb").innerHTML=H.length?H.map(h=>`<tr><td>${h.t}</td><td><span class="tag">${h.type}</span></td><td>${h.l}</td><td>${h.q.replace(/</g,"&lt;")}</td></tr>`).join(""):`<tr><td colspan=4 class="mu">No queries yet – try one!</td></tr>`}
+function dash(){const c=k=>H.filter(h=>h.type==k).length;$("ds").innerHTML=[["Total",H.length],["Debug",c("debug")],["Generated",c("gen")],["Explained",c("explain")]].map(a=>`<div class="card"><span class="mu">${a[0]}</span><br><b>${a[1]}</b></div>`).join("");
+$("dbars").innerHTML=Object.keys(T).map(k=>`<div style="margin:8px 0"><span class="mu">${T[k][0]}</span><div style="height:10px;border-radius:6px;background:#ffffff12"><div style="height:100%;border-radius:6px;background:var(--ac);width:${H.length?c(k)/H.length*100:0}%"></div></div></div>`).join("")}
+setTimeout(()=>go('landing'),2800);
+</script></body></html>
