@@ -21,7 +21,7 @@ AI-Software-Engineer-Assistant
    (Firebase console > Project settings > Service accounts > Generate new private key).
    Also create a Firestore database (test mode) in that Firebase project.
 5. Run: `python app.py`
-6. Open http://127.0.0.1:5000
+6. Open http://127.0.0.1:5000  (or) https://ai-software-engineer-assistant-fuaq.onrender.com
 
 Demo without keys: double-click `templates/index.html` (sample answers only).
 Never share or upload `.env` or `serviceAccountKey.json` publicly.
